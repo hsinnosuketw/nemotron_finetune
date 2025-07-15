@@ -11,3 +11,4 @@ test/
 stored_tokens
 token
 training_output.log
+continue_training_output.log

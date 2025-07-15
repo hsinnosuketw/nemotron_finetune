@@ -21,7 +21,10 @@ from nemo.lightning.pytorch.strategies.utils import RestoreConfig
 
 # directory setting
 TOKENIZER_NAME = "hf://nvidia/Llama-3_3-Nemotron-Super-49B-v1"
-CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/nemotron_49b_super_custom_finetune/"
+SAVE_CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/"
+
+LOAD_CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/nemotron_49b_super_custom_finetune/2025-07-15_00-04-14/checkpoints/model_name=0--val_loss=0.03-step=549-consumed_samples=1100.0-last/"
+
 DATA_DIR = "/datasets/soc-20250703225140/dataset_split/" # include training, validation, and test.jsonl files
 CACHE_DIR = "/datasets/soc-20250703225140/"
 
@@ -49,7 +52,7 @@ MICRO_BATCH_SIZE = 1
 
 # training parameters
 EPOCH=3
-MAX_STEPS=-1
+MAX_STEPS=3073//2
 
 # parallelism settings
 tensor_model_parallel_size = 2
@@ -73,7 +76,7 @@ print("Building and initiating finetuning recipe...")
 
 recipe = llm.llama33_nemotron_super_49b.finetune_recipe(
     name="nemotron_49b_super_custom_finetune",
-    dir=CHECKPOINT_DIR,
+    dir=SAVE_CHECKPOINT_DIR,
     num_nodes=NUM_NODES,
     num_gpus_per_node=GPUS_PER_NODE,
     peft_scheme=PEFT_SCHEME,
@@ -91,6 +94,8 @@ data_module = run.Config(
     micro_batch_size=MICRO_BATCH_SIZE,
     global_batch_size=GLOBAL_BATCH_SIZE,
 )
+
+recipe.resume.restore_config.path = LOAD_CHECKPOINT_DIR
 
 # recipe data setting
 recipe.data = data_module
