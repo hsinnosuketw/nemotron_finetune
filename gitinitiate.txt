@@ -1,0 +1,3 @@
+git config --global --add safe.directory /datasets/soc-20250703225140
+git config --global user.emgit config --global user.email "hsinnosuketw@gmail.com"
+git config --global user.na--global user.name hsinnosuketw
