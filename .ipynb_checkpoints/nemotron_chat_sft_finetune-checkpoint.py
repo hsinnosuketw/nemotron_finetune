@@ -20,7 +20,13 @@ import nemo_run as run
 TOKENIZER_NAME = "hf://nvidia/Llama-3_3-Nemotron-Super-49B-v1"
 CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/"
 # CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/nemotron_49b_super_custom_finetune/2025-07-14_17-42-12/checkpoints/"
-DATA_DIR = "/datasets/soc-20250703225140/dataset_split/" # include training, validation, and test.jsonl files
+
+# include training, validation, and test.jsonl files
+# with sysprompt
+# DATA_DIR = "/datasets/soc-20250703225140/dataset_split_with_sysprompt/"
+
+# without sysprompt
+DATA_DIR = "/datasets/soc-20250703225140/dataset_split_without_sysprompt/"
 CACHE_DIR = "/datasets/soc-20250703225140/"
 
 # environment parameters setting

@@ -1,0 +1,951 @@
+nohup: ignoring input
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:105: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[NeMo W 2025-07-19 17:35:19 nemo_logging:405] /usr/local/lib/python3.12/dist-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+      warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+    
+ $NEMO_MODELS_CACHE=/datasets/soc-20250703225140/models 
+Imported Checkpoint
+├── context/
+│   ├── artifacts/
+│   │   └── generation_config.json
+│   ├── nemo_tokenizer/
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer.json
+│   │   └── tokenizer_config.json
+│   ├── io.json
+│   └── model.yaml
+└── weights/
+    ├── .ipynb_checkpoints/
+    │   └── metadata-checkpoint.json
+    ├── .metadata
+    ├── __0_0.distcp
+    ├── __0_1.distcp
+    ├── common.pt
+    └── metadata.json
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+Building and initiating finetuning recipe...
+Overwriting dataset in recipe with customized dataset...
+Recipe 設定完成，準備開始訓練...
+[NeMo I 2025-07-19 17:35:28 nemo_logging:393] Disabling try_restore_best_ckpt restoration for adapters
+[NeMo I 2025-07-19 17:35:28 nemo_logging:393] Experiments will be logged at /datasets/soc-20250703225140/nemo_checkpoints/nemotron_49b_super_custom_finetune/2025-07-19_17-35-28
+[NeMo W 2025-07-19 17:35:28 nemo_logging:405] "update_logger_directory" is True. Overwriting tensorboard logger "save_dir" to /datasets/soc-20250703225140/nemo_checkpoints/tb_logs
+[NeMo W 2025-07-19 17:35:28 nemo_logging:405] The Trainer already contains a ModelCheckpoint callback. This will be overwritten.
+[NeMo W 2025-07-19 17:35:28 nemo_logging:405] The checkpoint callback was told to monitor a validation value and trainer's max_steps was set to 6146. Please ensure that max_steps will run for at least 1 epochs to ensure that checkpointing will not error out.
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has data parallel group : [0]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has combined group of data parallel and context parallel : [0]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] All data parallel group ranks with context parallel combined: [[0], [1]]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Ranks 0 has data parallel rank: 0
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has context parallel group: [0]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] All context parallel group ranks: [[0], [1]]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Ranks 0 has context parallel rank: 0
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has model parallel group: [0, 1]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] All model parallel group ranks: [[0, 1]]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has tensor model parallel group: [0, 1]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] All tensor model parallel group ranks: [[0, 1]]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has tensor model parallel rank: 0
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has pipeline model parallel group: [0]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has embedding group: [0]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] All pipeline model parallel group ranks: [[0], [1]]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has pipeline model parallel rank 0
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] All embedding group ranks: [[0], [1]]
+[NeMo I 2025-07-19 17:35:29 nemo_logging:393] Rank 0 has embedding rank: 0
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:105: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+ $NEMO_MODELS_CACHE=/datasets/soc-20250703225140/models 
+Imported Checkpoint
+├── context/
+│   ├── artifacts/
+│   │   └── generation_config.json
+│   ├── nemo_tokenizer/
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer.json
+│   │   └── tokenizer_config.json
+│   ├── io.json
+│   └── model.yaml
+└── weights/
+    ├── .ipynb_checkpoints/
+    │   └── metadata-checkpoint.json
+    ├── .metadata
+    ├── __0_0.distcp
+    ├── __0_1.distcp
+    ├── common.pt
+    └── metadata.json
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 2 processes
+----------------------------------------------------------------------------------------------------
+
+[NeMo I 2025-07-19 17:35:51 nemo_logging:393] Setting up ModelTransform for stage: TrainerFn.FITTING
+[NeMo I 2025-07-19 17:35:51 nemo_logging:393] Found model_transform attribute on pl_module
+[NeMo I 2025-07-19 17:35:51 nemo_logging:393] Set model_transform to: <function _call_counter.<locals>.wrapper at 0x7f4ae9179da0>
+[NeMo I 2025-07-19 17:35:51 nemo_logging:393] Padded vocab_size: 128256, original vocab_size: 128256, dummy tokens: 0.
+[NeMo I 2025-07-19 17:35:52 nemo_logging:393] Apply rope scaling with factor=8.0, low_freq_factor=1.0, high_freq_factor=4.0, old_context_len=8192.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+[NeMo I 2025-07-19 17:35:52 nemo_logging:393] Copying Trainer's 'max_steps' (6146) to LR scheduler's 'max_steps'.
+[NeMo I 2025-07-19 17:35:52 num_microbatches_calculator:228] setting number of microbatches to constant 2
+[NeMo I 2025-07-19 17:35:52 nemo_logging:393] Doing selective restore from RestoreConfig(path='/datasets/soc-20250703225140/models/nvidia/Llama-3_3-Nemotron-Super-49B-v1', adapter_path=None, load_model_state=True, load_optim_state=False, load_artifacts=True)
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1]
+[NeMo I 2025-07-19 17:35:52 nemo_logging:393] Using <megatron.core.dist_checkpointing.strategies.fully_parallel.FullyParallelLoadStrategyWrapper object at 0x7f4c5155fc20> dist-ckpt load strategy.
+[NeMo I 2025-07-19 17:37:02 nemo_logging:393] Global Checkpoint Load : Rank : 0 : Start time : 1752917752.221s : Time spent in load_checkpoint: 70.269s
+[NeMo I 2025-07-19 17:37:02 nemo_logging:393] Restoring model weights from RestoreConfig(path='/datasets/soc-20250703225140/models/nvidia/Llama-3_3-Nemotron-Super-49B-v1', adapter_path=None, load_model_state=True, load_optim_state=False, load_artifacts=True)
+[NeMo I 2025-07-19 17:37:02 nemo_logging:393] Finished restoring from RestoreConfig(path='/datasets/soc-20250703225140/models/nvidia/Llama-3_3-Nemotron-Super-49B-v1', adapter_path=None, load_model_state=True, load_optim_state=False, load_artifacts=True), cleaning up.
+
+  | Name   | Type     | Params | Mode 
+--------------------------------------------
+0 | module | GPTModel | 24.9 B | train
+--------------------------------------------
+24.9 B    Trainable params
+0         Non-trainable params
+24.9 B    Total params
+99,736.420Total estimated model params size (MB)
+1330      Modules in train mode
+0         Modules in eval mode
+[rank: 0] Received SIGTERM: 15
+[rank: 0] Received SIGTERM: 15
+Building and initiating finetuning recipe...
+Overwriting dataset in recipe with customized dataset...
+Recipe 設定完成，準備開始訓練...
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.0.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.0.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.0.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.0.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.1.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.1.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.1.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.1.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.2.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.2.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.2.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.2.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.3.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.3.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.3.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.3.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.4.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.4.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.4.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.4.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.5.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.5.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.5.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.5.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.6.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.6.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.7.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.7.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.8.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.8.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.8.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.8.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.9.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.9.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.9.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.9.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.10.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.10.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.10.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.10.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.11.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.11.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.12.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.12.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.12.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.12.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.13.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.13.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.13.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.13.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.14.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.14.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.14.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.14.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.15.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.15.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.15.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.15.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.16.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.16.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.16.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.16.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.17.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.17.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.17.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.17.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.18.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.18.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.18.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.18.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.19.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.19.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.19.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.19.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.20.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.20.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.20.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.20.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.21.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.21.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.21.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.21.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.22.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.22.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.22.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.22.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.23.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.23.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.23.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.23.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.24.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.24.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.24.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.24.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.25.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.25.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.25.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.25.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.26.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.26.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.26.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.26.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.27.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.27.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.27.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.27.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.28.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.28.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.28.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.28.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.29.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.29.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.29.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.29.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.30.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.30.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.30.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.30.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.31.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.31.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.31.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.31.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.32.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.32.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.32.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.32.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.33.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.33.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.33.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.33.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.34.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.34.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.34.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.34.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.35.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.35.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.35.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.35.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.36.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.36.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.36.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.36.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.37.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.37.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.37.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.37.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.38.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.38.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.38.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.38.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:03 nemo_logging:393] Adding lora to: module.decoder.layers.39.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.39.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.39.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.39.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.40.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.40.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.40.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.40.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.41.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.41.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.41.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.41.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.42.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.42.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.43.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.43.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.44.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.44.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.45.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.45.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.46.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.46.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.47.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.47.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.48.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.48.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.49.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.49.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.50.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.50.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.51.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.51.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.52.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.52.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.52.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.52.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.53.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.53.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.54.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.54.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.55.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.55.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.56.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.56.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.57.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.57.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.58.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.58.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.59.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.59.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.60.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.60.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.61.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.61.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.62.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.62.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.63.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.63.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.64.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.64.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.65.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.65.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.66.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.66.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.67.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.67.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.68.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.68.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.69.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.69.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.70.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.70.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.71.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.71.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.71.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.71.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.72.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.72.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.72.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.72.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.73.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.73.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.73.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.73.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.74.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.74.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.74.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.74.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.75.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.75.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.75.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.75.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.76.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.76.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.76.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.76.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.77.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.77.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.77.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.77.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.78.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.78.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.78.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.78.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.79.self_attention.linear_proj
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.79.self_attention.linear_qkv
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.79.mlp.linear_fc1
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Adding lora to: module.decoder.layers.79.mlp.linear_fc2
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] After applying model_transform:
+    
+      | Name   | Type     | Params | Mode 
+    --------------------------------------------
+    0 | module | GPTModel | 25.0 B | train
+    --------------------------------------------
+    31.8 M    Trainable params
+    24.9 B    Non-trainable params
+    25.0 B    Total params
+    99,863.527Total estimated model params size (MB)
+    2620      Modules in train mode
+    0         Modules in eval mode
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Initializing model parallel
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393]  > number of parameters on (tensor, pipeline) model parallel rank (0 ,0): 24965881856
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393]  > number of trainable parameters: 31776768 (0.13% of total)
+[NeMo I 2025-07-19 17:37:04 utils:532] Setting up DistributedDataParallel with config DistributedDataParallelConfig(grad_reduce_in_fp32=True, overlap_grad_reduce=False, overlap_param_gather=False, align_param_gather=False, use_distributed_optimizer=False, num_distributed_optimizer_instances=1, check_for_nan_in_grad=True, check_for_large_grads=False, bucket_size=None, pad_buckets_for_high_nccl_busbw=False, average_in_collective=False, fp8_param_gather=False, use_custom_fsdp=False, data_parallel_sharding_strategy='no_shard', gradient_reduce_div_fusion=True, suggested_communication_unit_size=None, preserve_fp32_weights=True, keep_fp8_transpose_cache_when_using_custom_fsdp=False)
+[NeMo I 2025-07-19 17:37:04 utils:553] Number of buckets for gradient all-reduce / reduce-scatter: 1
+    Params for bucket 1 (31776768 elements, 31776768 padded size):
+    	module.decoder.layers.56.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.31.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.77.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.15.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.60.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.40.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.33.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.23.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.9.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.52.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.14.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.75.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.44.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.35.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.26.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.19.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.15.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.6.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.69.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.38.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.28.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.16.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.5.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.0.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.77.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.48.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.72.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.60.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.40.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.33.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.24.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.15.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.52.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.75.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.65.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.35.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.26.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.19.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.13.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.4.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.32.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.69.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.56.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.20.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.1.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.48.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.30.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.14.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.72.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.41.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.35.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.24.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.18.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.8.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.2.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.30.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.75.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.65.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.44.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.36.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.27.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.4.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.56.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.38.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.31.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.22.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.20.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.8.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.0.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.77.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.61.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.41.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.24.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.2.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.30.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.52.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.15.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.75.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.44.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.26.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.19.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.11.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.5.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.69.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.34.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.22.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.8.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.2.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.77.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.49.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.13.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.72.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.61.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.41.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.24.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.20.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.14.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.31.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.52.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.14.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.65.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.36.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.26.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.20.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.4.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.57.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.22.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.5.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.78.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.49.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.29.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.12.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.72.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.41.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.33.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.21.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.9.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.30.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.75.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.65.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.45.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.36.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.28.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.12.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.0.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.57.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.38.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.32.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.22.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.10.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.1.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.78.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.28.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.73.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.61.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.34.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.24.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.21.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.9.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.3.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.53.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.32.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.17.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.1.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.75.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.45.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.28.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.15.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.70.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.38.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.32.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.20.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.78.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.49.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.73.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.61.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.41.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.34.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.24.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.53.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.66.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.36.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.27.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.11.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.0.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.70.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.57.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.39.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.32.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.18.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.8.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.1.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.78.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.49.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.73.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.41.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.34.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.18.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.9.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.32.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.0.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.75.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.66.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.45.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.36.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.27.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.21.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.11.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.57.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.39.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.22.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.6.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.13.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.73.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.62.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.24.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.19.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.9.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.2.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.53.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.30.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.15.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.0.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.75.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.45.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.28.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.6.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.1.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.70.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.39.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.16.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.7.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.4.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.78.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.50.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.29.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.62.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.41.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.24.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.9.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.4.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.53.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.31.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.18.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.76.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.66.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.36.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.29.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.21.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.13.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.33.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.70.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.58.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.39.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.22.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.16.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.8.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.1.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.78.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.50.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.28.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.73.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.41.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.25.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.18.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.4.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.34.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.16.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.76.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.66.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.46.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.36.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.27.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.27.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.17.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.5.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.71.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.58.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.22.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.17.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.8.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.14.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.73.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.62.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.25.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.18.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.3.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.54.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.76.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.46.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.37.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.11.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.9.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.71.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.39.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.33.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.78.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.50.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.62.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.42.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.25.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.19.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.54.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.27.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.76.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.67.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.37.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.12.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.71.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.58.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.39.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.33.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.6.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.78.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.50.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.30.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.14.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.35.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.73.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.42.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.25.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.20.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.2.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.31.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.16.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.67.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.46.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.37.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.28.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.21.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.12.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.2.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.71.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.58.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.22.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.10.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.79.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.32.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.73.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.63.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.35.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.19.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.10.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.2.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.54.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.76.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.46.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.37.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.12.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.1.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.39.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.33.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.23.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.10.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.1.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.79.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.51.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.29.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.74.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.63.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.42.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.25.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.20.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.9.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.3.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.54.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.76.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.67.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.34.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.21.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.5.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.71.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.59.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.39.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.10.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.3.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.79.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.51.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.30.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.34.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.74.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.42.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.25.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.3.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.31.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.15.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.0.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.67.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.47.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.37.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.13.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.71.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.59.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.40.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.23.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.8.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.4.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.79.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.74.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.63.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.35.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.19.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.10.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.55.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.15.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.76.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.47.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.37.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.29.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.12.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.40.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.23.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.16.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.8.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.51.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.29.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.74.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.63.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.43.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.25.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.7.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.55.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.17.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.0.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.76.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.68.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.38.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.21.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.12.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.5.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.71.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.59.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.40.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.23.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.16.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.79.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.51.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.43.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.35.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.25.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.31.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.17.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.77.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.68.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.47.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.37.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.5.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.71.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.59.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.40.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.5.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.29.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.79.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.52.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.74.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.64.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.26.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.19.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.55.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.31.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.77.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.47.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.37.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.30.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.17.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.7.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.72.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.35.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.23.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.52.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.74.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.64.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.43.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.34.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.26.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.20.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.4.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.55.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.3.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.77.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.68.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.38.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.21.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.12.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.72.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.60.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.40.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.33.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.23.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.10.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.79.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.52.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.43.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.36.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.27.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.26.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.3.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.32.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.17.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.2.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.77.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.68.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.48.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.38.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.27.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.13.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.72.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.60.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.40.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.18.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.13.self_attention.linear_proj.adapter.linear_in.weight
+    	module.decoder.layers.79.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.52.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.29.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.14.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.74.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.64.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.26.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.13.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.7.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.56.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.17.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.69.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.48.mlp.linear_fc1.adapter.linear_out.weight
+    	module.decoder.layers.38.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.28.self_attention.linear_qkv.adapter.linear_in.weight
+    	module.decoder.layers.14.self_attention.linear_proj.adapter.linear_out.weight
+    	module.decoder.layers.72.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.23.mlp.linear_fc2.adapter.linear_in.weight
+    	module.decoder.layers.18.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.16.self_attention.linear_qkv.adapter.linear_out.weight
+    	module.decoder.layers.74.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.64.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.44.mlp.linear_fc1.adapter.linear_in.weight
+    	module.decoder.layers.10.mlp.linear_fc2.adapter.linear_out.weight
+    	module.decoder.layers.3.mlp.linear_fc1.adapter.linear_out.weight
+[NeMo I 2025-07-19 17:37:04 nemo_logging:393] Setting up optimizers
+[NeMo I 2025-07-19 17:37:04 utils:532] Setting up optimizer with config OptimizerConfig(optimizer='adam', lr=0.0001, min_lr=None, decoupled_lr=None, decoupled_min_lr=None, weight_decay=0.1, fp16=False, bf16=True, params_dtype=torch.bfloat16, use_precision_aware_optimizer=False, main_grads_dtype=torch.float32, main_params_dtype=torch.float32, exp_avg_dtype=torch.float32, exp_avg_sq_dtype=torch.float32, loss_scale=None, initial_loss_scale=4294967296, min_loss_scale=1.0, loss_scale_window=1000, hysteresis=2, adam_beta1=0.9, adam_beta2=0.98, adam_eps=1e-05, sgd_momentum=0.9, use_distributed_optimizer=False, overlap_param_gather_with_optimizer_step=False, optimizer_cpu_offload=False, optimizer_offload_fraction=0.0, use_torch_optimizer_for_cpu_offload=False, overlap_cpu_optimizer_d2h_h2d=False, pin_cpu_grads=True, pin_cpu_params=True, clip_grad=1.0, log_num_zeros_in_grad=False, barrier_with_L1_time=False, timers=None, config_logger_dir='')
+[NeMo W 2025-07-19 17:37:10 nemo_logging:405] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/connectors/logger_connector/result.py:431: It is recommended to use `self.log('global_batch_size', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+    
+[NeMo W 2025-07-19 17:37:10 nemo_logging:405] /usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/connectors/logger_connector/result.py:431: It is recommended to use `self.log('val_loss', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+    
+Sanity checking Validation: iteration 1/1
+[rank: 0] Received SIGTERM: 15
+[rank: 0] Received SIGTERM: 15
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/datasets/soc-20250703225140/nemotron_chat_sft_finetune.py", line 124, in <module>
+[rank0]:     run.run(recipe, direct=True)
+[rank0]:   File "/opt/NeMo-Run/nemo_run/run/api.py", line 67, in run
+[rank0]:     direct_run_fn(fn_or_script, dryrun=dryrun)
+[rank0]:   File "/opt/NeMo-Run/nemo_run/run/task.py", line 80, in direct_run_fn
+[rank0]:     built_fn()
+[rank0]:   File "/opt/NeMo/nemo/collections/llm/api.py", line 222, in finetune
+[rank0]:     return train(
+[rank0]:            ^^^^^^
+[rank0]:   File "/opt/NeMo/nemo/collections/llm/api.py", line 127, in train
+[rank0]:     trainer.fit(model, data)
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/trainer.py", line 538, in fit
+[rank0]:     call._call_and_handle_interrupt(
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/call.py", line 46, in _call_and_handle_interrupt
+[rank0]:     return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/strategies/launchers/subprocess_script.py", line 105, in launch
+[rank0]:     return function(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/trainer.py", line 574, in _fit_impl
+[rank0]:     self._run(model, ckpt_path=ckpt_path)
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/trainer.py", line 981, in _run
+[rank0]:     results = self._run_stage()
+[rank0]:               ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/trainer.py", line 1025, in _run_stage
+[rank0]:     self.fit_loop.run()
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/loops/fit_loop.py", line 201, in run
+[rank0]:     self.on_run_start()
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/loops/fit_loop.py", line 327, in on_run_start
+[rank0]:     call._call_callback_hooks(trainer, "on_train_start")
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/lightning/pytorch/trainer/call.py", line 218, in _call_callback_hooks
+[rank0]:     fn(trainer, trainer.lightning_module, *args, **kwargs)
+[rank0]:   File "/opt/NeMo/nemo/lightning/pytorch/callbacks/model_checkpoint.py", line 189, in on_train_start
+[rank0]:     _file.write(get_git_diff())
+[rank0]:                 ^^^^^^^^^^^^^^
+[rank0]:   File "/opt/NeMo/nemo/utils/exp_manager.py", line 1170, in get_git_diff
+[rank0]:     return subprocess.check_output(['git', 'diff'], stderr=subprocess.STDOUT).decode()
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf6 in position 3951: invalid start byte
