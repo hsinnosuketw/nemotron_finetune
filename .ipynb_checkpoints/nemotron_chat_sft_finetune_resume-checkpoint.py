@@ -23,7 +23,11 @@ from nemo.lightning.pytorch.strategies.utils import RestoreConfig
 TOKENIZER_NAME = "hf://nvidia/Llama-3_3-Nemotron-Super-49B-v1"
 SAVE_CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/"
 
-LOAD_CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/nemotron_49b_super_custom_finetune/2025-07-15_00-04-14/checkpoints/model_name=0--val_loss=0.03-step=549-consumed_samples=1100.0-last/"
+# ADAPTER_CHECKPOINT_DIR = "/datasets/soc-20250703225140/models/nvidia/Llama-3_3-Nemotron-Super-49B-v1"
+PREVIOUS_EXPERIMENT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/nemotron_49b_super_custom_finetune/2025-07-16_01-16-14/checkpoints/"
+
+# AutoResume
+# LOAD_CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/"
 
 DATA_DIR = "/datasets/soc-20250703225140/dataset_split/" # include training, validation, and test.jsonl files
 CACHE_DIR = "/datasets/soc-20250703225140/"
@@ -50,9 +54,15 @@ PACKED_SEQUENCE = False
 GLOBAL_BATCH_SIZE = 2
 MICRO_BATCH_SIZE = 1
 
+LEN_DATASET = 3073
+
 # training parameters
-EPOCH=3
-MAX_STEPS=3073//2
+MIN_EPOCHS=3
+MAX_EPOCHS=MIN_EPOCHS + 1
+
+MAX_STEPS = (MAX_EPOCHS) * LEN_DATASET // 2
+MIN_STEPS = (MIN_EPOCHS) * LEN_DATASET // 2
+
 
 # parallelism settings
 tensor_model_parallel_size = 2
@@ -77,6 +87,7 @@ print("Building and initiating finetuning recipe...")
 recipe = llm.llama33_nemotron_super_49b.finetune_recipe(
     name="nemotron_49b_super_custom_finetune",
     dir=SAVE_CHECKPOINT_DIR,
+    # resume_path=LOAD_CHECKPOINT_DIR,
     num_nodes=NUM_NODES,
     num_gpus_per_node=GPUS_PER_NODE,
     peft_scheme=PEFT_SCHEME,
@@ -95,16 +106,29 @@ data_module = run.Config(
     global_batch_size=GLOBAL_BATCH_SIZE,
 )
 
-recipe.resume.restore_config.path = LOAD_CHECKPOINT_DIR
+# recipe.model.tokenizer = tokenizer 
+recipe.resume = run.Config(
+    AutoResume,
+    resume_if_exists=True,          # <-- NeMo will look for checkpoints inside <dir>/nemotron_49b_super_custom_finetune
+    resume_from_directory=str(PREVIOUS_EXPERIMENT_DIR),
+    restore_config=None,            # adapters will be reloaded automatically
+)
 
+    
 # recipe data setting
 recipe.data = data_module
 
 
 # recipe trainer setting
 recipe.trainer.devices = GPUS_PER_NODE
-recipe.trainer.max_epochs = EPOCH
+recipe.trainer.max_epochs = MAX_EPOCHS
+recipe.trainer.min_epochs = MIN_EPOCHS
 recipe.trainer.max_steps = MAX_STEPS
+recipe.trainer.min_steps = MIN_STEPS
+
+recipe.trainer.enable_progress_bar=True
+recipe.trainer.enable_model_summary=True
+
 recipe.trainer.strategy.tensor_model_parallel_size = tensor_model_parallel_size
 recipe.trainer.strategy.pipeline_model_parallel_size = pipeline_model_parallel_size
 accumulate_steps = MICRO_BATCH_SIZE // MICRO_BATCH_SIZE

@@ -1,5 +1,4 @@
-dataset/
-dataset_split/
+# Foldes
 datasets/
 models/
 models--nvidia--Llama-3_3-Nemotron-Super-49B-v1/
@@ -7,6 +6,10 @@ models--nvidia--Llama-3_3-Nemotron-Super-49B-v1-FP8/
 modules/
 nemo_checkpoints/
 test/
+nemo_nlp_tmp/
+
+
+
 *.tar.gz
 stored_tokens
 token

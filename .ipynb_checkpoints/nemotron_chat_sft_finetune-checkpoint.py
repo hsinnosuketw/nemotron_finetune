@@ -45,9 +45,14 @@ PACKED_SEQUENCE = False
 GLOBAL_BATCH_SIZE = 2
 MICRO_BATCH_SIZE = 1
 
+LEN_DATASET = 3073
+
 # training parameters
-EPOCH=2
-MAX_STEPS=3073//GLOBAL_BATCH_SIZE
+MIN_EPOCHS=3
+MAX_EPOCHS=MIN_EPOCHS + 1
+
+MAX_STEPS = (MAX_EPOCHS) * LEN_DATASET // 2
+MIN_STEPS = (MIN_EPOCHS) * LEN_DATASET // 2
 
 # parallelism settings
 tensor_model_parallel_size = 2
@@ -94,8 +99,14 @@ recipe.data = data_module
 
 # recipe trainer setting
 recipe.trainer.devices = GPUS_PER_NODE
-recipe.trainer.max_epochs = EPOCH
+recipe.trainer.max_epochs = MAX_EPOCHS
+recipe.trainer.min_epochs = MIN_EPOCHS
 recipe.trainer.max_steps = MAX_STEPS
+recipe.trainer.min_steps = MIN_STEPS
+
+recipe.trainer.enable_progress_bar=True
+recipe.trainer.enable_model_summary=True
+
 recipe.trainer.strategy.tensor_model_parallel_size = tensor_model_parallel_size
 recipe.trainer.strategy.pipeline_model_parallel_size = pipeline_model_parallel_size
 accumulate_steps = MICRO_BATCH_SIZE // MICRO_BATCH_SIZE
