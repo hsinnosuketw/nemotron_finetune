@@ -51,7 +51,8 @@ def create_and_split_chat_dataset(
             
             # 建立新的記錄，符合 system/mask/conversations 格式
             new_record = {
-                "system": prompt,
+                # "system": prompt,
+                "system" : "",
                 "mask": "User",
                 "conversations": [
                     {"from": "User", "value": question_text},
@@ -107,6 +108,6 @@ def create_and_split_chat_dataset(
 if __name__ == "__main__":
     # 設定來源檔案和輸出目錄的完整路徑
     SOURCE_JSON_FILE = '/datasets/soc-20250703225140/dataset/dataset.json'
-    OUTPUT_DIRECTORY = '/datasets/soc-20250703225140/dataset_split'
+    OUTPUT_DIRECTORY = '/datasets/soc-20250703225140/dataset_split_without_sysprompt'
     # 執行資料處理與分割
     create_and_split_chat_dataset(SOURCE_JSON_FILE, OUTPUT_DIRECTORY)

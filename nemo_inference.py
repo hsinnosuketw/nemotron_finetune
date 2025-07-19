@@ -13,9 +13,11 @@ from prompt import system_prompt
 
 
 # Question 3 from the testing dataset
-user_question = "How should fluoxetine dosing be adjusted for an individual with the HTR2A rs7997012 A/A genotype?"
+# user_question = "How should fluoxetine dosing be adjusted for an individual with the HTR2A rs7997012 A/A genotype?"
 # Question 13 from the testing dataset
-user_question = "What is the risk of treatment failure with standard rabeprazole dosing for a CYP2C19 ultrarapid metabolizer?"
+# user_question = "What is the risk of treatment failure with standard rabeprazole dosing for a CYP2C19 ultrarapid metabolizer?"
+user_question = "A 62-year-old female patient of African American descent with atrial fibrillation and a history of ischemic stroke requires anticoagulation therapy. She is initiated on warfarin, but genotyping reveals she is a CYP2C9 poor metabolizer (*3/*3 genotype) and carries the VKORC1 -1639G>A variant (homozygous A/A, associated with reduced warfarin dose requirements). Analyze the heightened risk of bleeding due to over-anticoagulation from these combined variants, discuss dose initiation and adjustment strategies per CPIC guidelines, and outline a monitoring plan including INR targets and potential switch to direct oral anticoagulants if challenges persist."
+
 
 strategy = nl.MegatronStrategy(
     tensor_model_parallel_size=2,
@@ -42,8 +44,8 @@ trainer = nl.Trainer(
 
 source = {
     "mask": "User",
-    "system": "",
-    # system_prompt,
+    # "system": "",
+    "system": system_prompt,
     "conversations": [
         {
             "from": "User",
