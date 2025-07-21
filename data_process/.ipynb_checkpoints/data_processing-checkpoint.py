@@ -12,19 +12,19 @@ def create_and_split_chat_dataset(
     val_ratio: float = 0.15
 ):
     """
-    讀取原始 JSON 檔案，將 QA pair 轉換為 NeMo Chat SFT 格式，
-    並將字典類型的 output 序列化為 JSON 字串，最後分割成 .jsonl 檔案。
+    Turn QA pairs into NeMo Chat SFT format(Dict -> .jsonl file):
+    
+    Input: JSON
 
     Args:
-        input_path (str): 來源 .json 檔案的路徑。
-        output_dir (str): 分割後檔案的輸出目錄。
-        train_ratio (float): 訓練集的比例。
-        val_ratio (float): 驗證集的比例。
+        input_path (str): .json file path
+        output_dir (str)
+        train_ratio (float)
+        val_ratio (float)
     """
-    print(f"--- 開始處理檔案並轉換為 Chat 格式：'{input_path}' ---")
+    print(f"--- Input File Path：'{input_path}' ---")
     
     try:
-        # 1. 讀取來源 JSON 檔案
         with open(input_path, 'r', encoding='utf-8') as f:
             original_data = json.load(f)
         

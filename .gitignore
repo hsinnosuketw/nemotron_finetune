@@ -7,9 +7,9 @@ modules/
 nemo_checkpoints/
 test/
 nemo_nlp_tmp/
+cold_start_config/
 
-
-
+# Files 
 *.tar.gz
 stored_tokens
 token
