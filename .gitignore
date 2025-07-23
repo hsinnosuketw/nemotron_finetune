@@ -8,6 +8,9 @@ nemo_checkpoints/
 test/
 nemo_nlp_tmp/
 cold_start_config/
+models--vidore--colqwen2.5-base/
+models--vidore--colqwen2.5-v0.2/
+
 
 # Files 
 *.tar.gz

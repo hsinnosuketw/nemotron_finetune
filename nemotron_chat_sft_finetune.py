@@ -18,7 +18,8 @@ import nemo_run as run
 
 # directory setting
 TOKENIZER_NAME = "hf://nvidia/Llama-3_3-Nemotron-Super-49B-v1"
-CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/"
+# CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/"
+CHECKPOINT_DIR = "/datasets/cc-20250630151645/nemo_checkpoints/"
 # CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/nemotron_49b_super_custom_finetune/2025-07-14_17-42-12/checkpoints/"
 
 # include training, validation, and test.jsonl files
@@ -26,8 +27,12 @@ CHECKPOINT_DIR = "/datasets/soc-20250703225140/nemo_checkpoints/"
 # DATA_DIR = "/datasets/soc-20250703225140/dataset_split_with_sysprompt/"
 
 # without sysprompt
-DATA_DIR = "/datasets/soc-20250703225140/dataset_split_without_sysprompt/"
-CACHE_DIR = "/datasets/soc-20250703225140/"
+# DATA_DIR = "/datasets/soc-20250703225140/dataset_split_without_sysprompt/"
+DATA_DIR = "/datasets/cc-20250630151645/dataset_split_with_partial_sysprompt/"
+
+
+# CACHE_DIR = "/datasets/soc-20250703225140/"
+CACHE_DIR = "/datasets/cc-20250630151645/"
 
 # environment parameters setting
 os.environ['HF_HOME'] = CACHE_DIR

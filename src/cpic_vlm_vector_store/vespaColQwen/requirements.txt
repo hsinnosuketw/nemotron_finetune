@@ -1,0 +1,4 @@
+pyvespa
+colpali-engine
+pdf2image
+poppler-utils
