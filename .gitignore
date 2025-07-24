@@ -10,6 +10,9 @@ nemo_nlp_tmp/
 cold_start_config/
 models--vidore--colqwen2.5-base/
 models--vidore--colqwen2.5-v0.2/
+dataset_split_with_partial_sysprompt/
+dataset_split_with_sysprompt/
+dataset_split_without_sysprompt/
 
 
 # Files 
@@ -18,3 +21,4 @@ stored_tokens
 token
 training_output.log
 continue_training_output.log
+src/graph_rag/Full_Drug_Interaction_Data.json
