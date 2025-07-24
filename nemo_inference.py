@@ -70,14 +70,14 @@ prompts = [conversation]
 from nemo.collections.llm import api
 results = api.generate(
     # path="/datasets/soc-20250703225140/models/nvidia/Llama-3_3-Nemotron-Super-49B-v1/",
-    path="/datasets/soc-20250703225140/nemo_checkpoints/nemotron_49b_super_custom_finetune/2025-07-17_13-54-48/checkpoints/model_name=0--val_loss=0.02-step=2449-consumed_samples=4900.0",
+    path="/datasets/cc-20250630151645/nemo_checkpoints/nemotron_49b_super_custom_finetune/2025-07-24_04-00-28/checkpoints/model_name=0--val_loss=0.02-step=3199-consumed_samples=6400.0/",
     prompts=prompts,
     trainer=trainer,
     inference_params=CommonInferenceParams(
         temperature=1.0,
         top_p=0,  # greedy decoding
         top_k=1,  # greedy decoding
-        num_tokens_to_generate=300,
+        num_tokens_to_generate=512,
     ),
     text_only=True,
 )

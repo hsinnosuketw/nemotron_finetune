@@ -39,17 +39,17 @@ os.environ['HF_HOME'] = CACHE_DIR
 os.environ['NEMO_HOME'] = CACHE_DIR
 
 # model configurations
-MODEL_CONFIG=llm.LlamaNemotronModel(llm.Llama33NemotronSuper49BConfig())
-MODEL_SOURCE='hf://nvidia/Llama-3_3-Nemotron-Super-49B-v1'              
-HF_REPO="nvidia/Llama-3_3-Nemotron-Super-49B-v1"
+MODEL_CONFIG = llm.LlamaNemotronModel(llm.Llama33NemotronSuper49BConfig())
+MODEL_SOURCE = 'hf://nvidia/Llama-3_3-Nemotron-Super-49B-v1'
+HF_REPO = "nvidia/Llama-3_3-Nemotron-Super-49B-v1"
 
 # device settings
-NUM_NODES = 1           
-GPUS_PER_NODE = 2     
+NUM_NODES = 1
+GPUS_PER_NODE = 2
 
 # PEFT settings
 PEFT_SCHEME = 'lora'      # 'lora' or 'none' (Full-FT)
-PACKED_SEQUENCE = False   
+PACKED_SEQUENCE = False
 
 # batch size settings
 # gbs = mbs * gradient_accumulation_steps * num_gpus
@@ -59,8 +59,8 @@ MICRO_BATCH_SIZE = 1
 LEN_DATASET = 3073
 
 # training parameters
-MIN_EPOCHS=3
-MAX_EPOCHS=MIN_EPOCHS + 1
+MIN_EPOCHS = 3
+MAX_EPOCHS = MIN_EPOCHS + 1
 
 MAX_STEPS = (MAX_EPOCHS) * LEN_DATASET // 2
 MIN_STEPS = (MIN_EPOCHS) * LEN_DATASET // 2
@@ -115,8 +115,8 @@ recipe.trainer.min_epochs = MIN_EPOCHS
 recipe.trainer.max_steps = MAX_STEPS
 recipe.trainer.min_steps = MIN_STEPS
 
-recipe.trainer.enable_progress_bar=True
-recipe.trainer.enable_model_summary=True
+recipe.trainer.enable_progress_bar = True
+recipe.trainer.enable_model_summary = True
 
 recipe.trainer.strategy.tensor_model_parallel_size = tensor_model_parallel_size
 recipe.trainer.strategy.pipeline_model_parallel_size = pipeline_model_parallel_size
