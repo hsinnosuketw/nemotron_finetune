@@ -18,6 +18,11 @@ python pipeline.py --cpic-dir /path/to/pdfs --deploy-vespa
 
 from __future__ import annotations
 
+import sys, pathlib
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[1]   # …/src/
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 import argparse
 import asyncio
 import base64
@@ -48,7 +53,8 @@ from vespa.package import (
 )
 
 from colpali_engine.models import ColQwen2_5, ColQwen2_5_Processor
-import pdf_helper  # helper module
+import cpic_vlm_vector_store.pdf_helper as pdf_helper
+# import pdf_helper  # helper module
 
 # Disable duplicate tokenizer workers warning
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -326,7 +332,7 @@ def run(args: argparse.Namespace) -> None:
             fh.write(f"\t'URL':'{app.url}',\n")
             fh.write("\n}")
 
-        # asyncio.run(feed_pages_to_vespa(app, feed))
+        asyncio.run(feed_pages_to_vespa(app, feed))
     else:
         print("[i] Skipped Vespa deployment; feed JSON saved.")
 

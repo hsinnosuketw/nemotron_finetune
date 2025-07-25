@@ -22,6 +22,11 @@ python retrieve_cpic.py \
 """
 from __future__ import annotations
 
+import sys, pathlib
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[1]   # …/src/
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 import argparse
 import json
 import os
@@ -35,8 +40,8 @@ from vespa.application import Vespa
 from vespa.io import VespaQueryResponse
 
 from colpali_engine.models import ColQwen2_5, ColQwen2_5_Processor
-from vespa_setup_pipeline import load_model_and_processor  # same dir import
-import pdf_helper
+from cpic_vlm_vector_store.vespa_setup_pipeline import load_model_and_processor  # same dir import
+import cpic_vlm_vector_store.pdf_helper as pdf_helper
 
 # ---------------------------------------------------------------------------
 # Core helpers

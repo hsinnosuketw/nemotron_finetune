@@ -1,0 +1,8 @@
+{
+	'Endpoint':'https://ebc2e87f.b49eee25.z.vespa-app.cloud/',
+	'Secret Token':'None',
+	'Cert':'/home/jovyan/.vespa/hsinnosukejp.cpicguidelinevrag.default/data-plane-public-cert.pem',
+	'Key':'/home/jovyan/.vespa/hsinnosukejp.cpicguidelinevrag.default/data-plane-private-key.pem',
+	'URL':'https://ebc2e87f.b49eee25.z.vespa-app.cloud/',
+
+}

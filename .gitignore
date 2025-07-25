@@ -13,6 +13,7 @@ models--vidore--colqwen2.5-v0.2/
 dataset_split_with_partial_sysprompt/
 dataset_split_with_sysprompt/
 dataset_split_without_sysprompt/
+src/retrieved_pages/
 
 
 # Files 

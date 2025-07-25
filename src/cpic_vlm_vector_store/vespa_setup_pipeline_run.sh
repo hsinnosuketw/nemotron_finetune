@@ -21,7 +21,7 @@ if [ "$DEPLOY" = true ]; then
 fi
 
 # ----- execute pipeline ------------------------------------------------------
-python vespa_setup_pipeline.py \
+python cpic_vlm_vector_store/vespa_setup_pipeline.py \
   --model-name      "$MODEL_NAME" \
   --cache-dir       "$CACHE_DIR" \
   --device          "$DEVICE" \
